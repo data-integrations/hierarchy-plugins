@@ -46,9 +46,9 @@ import javax.annotation.Nullable;
  * Flatten is a transform plugin that flattens nested data structures.
  */
 @Plugin(type = Transform.PLUGIN_TYPE)
-@Name("Flatten")
+@Name("FlattenRecord")
 @Description("Flatten is a transform plugin that flattens nested data structures.")
-public final class Flatten extends Transform<StructuredRecord, StructuredRecord> {
+public final class FlattenRecord extends Transform<StructuredRecord, StructuredRecord> {
 
   private static final int MAX_NESTING_LEVEL = 100;
   private Config config;
@@ -56,7 +56,7 @@ public final class Flatten extends Transform<StructuredRecord, StructuredRecord>
   private Map<String, OutputFieldInfo> inputOutputMapping = Maps.newHashMap();
   private FailureCollector failureCollector;
 
-  public Flatten(Config config) {
+  public FlattenRecord(Config config) {
     this.config = config;
   }
 

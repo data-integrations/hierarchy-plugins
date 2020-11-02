@@ -28,9 +28,9 @@
  import java.lang.reflect.Field;
 
  /**
-  * Tests {@link Flatten}.
+  * Tests {@link FlattenRecord}.
   */
- public class FlattenTest {
+ public class FlattenRecordTest {
 
    private static final Schema INPUT_SCHEMA_RECORD_A =
      Schema.recordOf("recordA",
@@ -59,8 +59,8 @@
 
    @Test
    public void testWhenNoFieldIsSelected() {
-     Flatten.Config config = new Flatten.Config(null, "10");
-     Transform<StructuredRecord, StructuredRecord> transform = new Flatten(config);
+     FlattenRecord.Config config = new FlattenRecord.Config(null, "10");
+     Transform<StructuredRecord, StructuredRecord> transform = new FlattenRecord(config);
      MockTransformContext context = new MockTransformContext();
      try {
        transform.initialize(context);
@@ -74,10 +74,10 @@
    @Test
    public void testSchemaGeneration() throws Exception {
      String fieldsToFlatten = "a,b,c,d";
-     Flatten.Config config = new Flatten.Config(fieldsToFlatten, "10");
-     Transform<StructuredRecord, StructuredRecord> transform = new Flatten(config);
+     FlattenRecord.Config config = new FlattenRecord.Config(fieldsToFlatten, "10");
+     Transform<StructuredRecord, StructuredRecord> transform = new FlattenRecord(config);
      MockTransformContext context = new MockTransformContext();
-     Field field = Flatten.class.getDeclaredField("failureCollector");
+     Field field = FlattenRecord.class.getDeclaredField("failureCollector");
      field.setAccessible(true);
      field.set(transform, context.getFailureCollector());
      MockEmitter<StructuredRecord> emitter = new MockEmitter<>();
@@ -132,10 +132,10 @@
    @Test
    public void testNestedFieldLimitsReached() throws Exception {
      String fieldsToFlatten = "a,b,c,d";
-     Flatten.Config config = new Flatten.Config(fieldsToFlatten, null);
-     Transform<StructuredRecord, StructuredRecord> transform = new Flatten(config);
+     FlattenRecord.Config config = new FlattenRecord.Config(fieldsToFlatten, null);
+     Transform<StructuredRecord, StructuredRecord> transform = new FlattenRecord(config);
      MockTransformContext context = new MockTransformContext();
-     Field field = Flatten.class.getDeclaredField("failureCollector");
+     Field field = FlattenRecord.class.getDeclaredField("failureCollector");
      field.setAccessible(true);
      field.set(transform, context.getFailureCollector());
      MockEmitter<StructuredRecord> emitter = new MockEmitter<>();
@@ -160,10 +160,10 @@
    }
 
    private void testInvalidDuplicates(String fieldsToFlatten, StructuredRecord input) throws Exception {
-     Flatten.Config config = new Flatten.Config(fieldsToFlatten, "10");
-     Transform<StructuredRecord, StructuredRecord> transform = new Flatten(config);
+     FlattenRecord.Config config = new FlattenRecord.Config(fieldsToFlatten, "10");
+     Transform<StructuredRecord, StructuredRecord> transform = new FlattenRecord(config);
      MockTransformContext context = new MockTransformContext();
-     Field field = Flatten.class.getDeclaredField("failureCollector");
+     Field field = FlattenRecord.class.getDeclaredField("failureCollector");
      field.setAccessible(true);
      field.set(transform, context.getFailureCollector());
      MockEmitter<StructuredRecord> emitter = new MockEmitter<>();
