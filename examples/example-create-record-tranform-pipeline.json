@@ -3,7 +3,7 @@
   "description": "Data Pipeline Application",
   "artifact": {
     "name": "cdap-data-pipeline",
-    "version": "6.3.0-SNAPSHOT",
+    "version": "6.3.0",
     "scope": "SYSTEM"
   },
   "config": {
@@ -59,7 +59,7 @@
           "label": "Database-actor",
           "artifact": {
             "name": "database-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -96,7 +96,7 @@
           "label": "Joiner",
           "artifact": {
             "name": "core-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -135,7 +135,7 @@
           "label": "Joiner2",
           "artifact": {
             "name": "core-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -173,7 +173,7 @@
           "label": "CreateRecord",
           "artifact": {
             "name": "core-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "USER"
           },
           "properties": {
@@ -204,8 +204,8 @@
           "type": "batchaggregator",
           "label": "Group By",
           "artifact": {
-            "name": "core-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "name": "Hierarchy-Plugins",
+            "version": "1.0.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -238,7 +238,7 @@
           "label": "File",
           "artifact": {
             "name": "core-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -273,7 +273,7 @@
           "label": "Database-film-actor",
           "artifact": {
             "name": "database-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
@@ -310,7 +310,7 @@
           "label": "Database-film",
           "artifact": {
             "name": "database-plugins",
-            "version": "2.5.0-SNAPSHOT",
+            "version": "2.5.0",
             "scope": "SYSTEM"
           },
           "properties": {
