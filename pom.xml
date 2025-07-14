@@ -37,13 +37,6 @@
     <surefire.redirectTestOutputToFile>true</surefire.redirectTestOutputToFile>
   </properties>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
-
   <dependencies>
     <dependency>
       <groupId>io.cdap.cdap</groupId>
